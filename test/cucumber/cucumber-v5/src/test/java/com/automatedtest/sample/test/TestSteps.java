@@ -31,7 +31,7 @@ public class TestSteps {
 
     @Before
     public void saveScenarioName(Scenario scenario) {
-        actualTestName = UtilKt.urlEncode(scenario.getName());
+        actualTestName = scenario.getName();
     }
 
     @Given("^A user navigates to HomePage$")
