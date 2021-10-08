@@ -26,6 +26,7 @@ val SESSION_ID_VALUE_CALC_LINE = "${ThreadStorage::class.qualifiedName}.INSTANCE
 val SESSION_ID_CALC_LINE = "\"$SESSION_ID_HEADER\", $SESSION_ID_VALUE_CALC_LINE"
 val IF_CONDITION = "$TEST_NAME_VALUE_CALC_LINE != null && $SESSION_ID_VALUE_CALC_LINE != null"
 val IS_HEADER_ADDED = "${DevToolsClientThreadStorage::class.java.name}.INSTANCE.${DevToolsClientThreadStorage::isHeadersAdded.name}()"
+val IS_BEFORE_AFTER_ANNOTATION_TRACK = "${ThreadStorage::class.qualifiedName}.INSTANCE.${ThreadStorage::isBeforeAfterAnnotationTrack.name}()"
 
 @Suppress("RedundantOverride")
 class TTL : InheritableThreadLocal<String>() {

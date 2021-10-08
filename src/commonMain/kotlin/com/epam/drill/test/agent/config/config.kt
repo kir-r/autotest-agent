@@ -32,8 +32,9 @@ data class AgentRawConfig(
     val isRealtimeEnable: Boolean = true,
     val isGlobal: Boolean = false,
     val browserProxyAddress: String? = null,
+    val isBeforeAfterAnnotationTrack: Boolean = true,
     val isManuallyControlled: Boolean = false,
-    val sessionForEachTest: Boolean = false
+    val sessionForEachTest: Boolean = false,
 ) {
     val level: LogLevel
         get() = LogLevel.valueOf(logLevel)

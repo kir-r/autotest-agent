@@ -23,4 +23,6 @@ expect object ThreadStorage {
     fun proxyUrl(): String?
     fun startSession(testName: String?)
     fun stopSession()
+
+    fun isBeforeAfterAnnotationTrack(): Boolean
 }

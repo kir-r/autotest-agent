@@ -42,4 +42,6 @@ actual object ThreadStorage {
     actual external fun startSession(testName: String?)
 
     actual external fun stopSession()
+
+    actual external fun isBeforeAfterAnnotationTrack(): Boolean
 }

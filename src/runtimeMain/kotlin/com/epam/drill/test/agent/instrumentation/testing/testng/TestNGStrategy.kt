@@ -15,8 +15,8 @@
  */
 package com.epam.drill.test.agent.instrumentation.testing.testng
 
+import com.epam.drill.test.agent.*
 import com.epam.drill.test.agent.instrumentation.AbstractTestStrategy
-import com.epam.drill.test.agent.TestListener
 import javassist.ClassPool
 import javassist.CtClass
 import javassist.CtMethod
@@ -58,6 +58,13 @@ object TestNGStrategy : AbstractTestStrategy() {
                 }
             """.trimIndent()
         )
+        listOf("afterRun", "beforeRun").forEach {
+            ctClass.getDeclaredMethod(it).insertBefore("""
+                if (!$IS_BEFORE_AFTER_ANNOTATION_TRACK) {
+                    ${ThreadStorage::class.qualifiedName}.INSTANCE.${ThreadStorage::clear.name}();
+                }
+            """.trimIndent())
+        }
         return ctClass.toBytecode()
     }
 

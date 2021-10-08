@@ -45,4 +45,7 @@ actual object ThreadStorage {
             stopSession(sessionIds = sessionId.value)
         }
     }
+
+    actual fun isBeforeAfterAnnotationTrack(): Boolean = SessionController.agentConfig.isBeforeAfterAnnotationTrack
+
 }
